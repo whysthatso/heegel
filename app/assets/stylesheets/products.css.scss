@@ -1,0 +1,62 @@
+// Place all the styles related to the Products controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.eng, .ee {
+	font-size: 0.8em; 
+	vertical-align: super;
+	line-height:120%;
+}
+
+.eng, .infobox {
+	display: none;
+}
+
+.ee {
+	display: block;
+}
+
+#products { 
+	list-style-type: none; 
+	margin: 0; 
+	padding: 0;
+	overflow-y: visible;
+	
+	li { 
+		margin: 3px 3px 3px 0; 
+		padding: 1px; 
+		float: left; 
+		width: 100px; 
+		height: 90px; 
+		font-size: 4em; 
+		text-align: center;
+		cursor: move;
+	}
+}
+
+.product-index-image {
+    text-align: center;
+}
+
+.edit {
+	font-size: 0.8em;
+	font-weight: 100;
+}
+
+.sort {
+	min-height: 120px;
+	height:auto; 
+	border: 1px dotted black;
+	padding: 10px;
+}
+
+/* new_product form*/
+
+.new-product-subset div {
+	float: left;
+	padding-right: 4em;
+	width: 50%;
+}
+
+form.new_product div.actions {
+	padding-top:30px;
+}

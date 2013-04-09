@@ -1,0 +1,437 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require base
+ *= require layout
+ *= require skeleton
+ *= require_tree .
+ */
+
+
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -box-sizing:border-box;
+  color:black;
+}
+
+body, a, table, div {
+  font-family: Futura, "HelveticaNeue", "Helvetica Neue", Helvetica, Verdana, Arial, sans-serif;
+  line-height: 1.2em;
+}
+
+a, a:hover {
+  color:#000;
+}
+
+strong {
+    color: #000;
+    font-weight: bold;
+}
+
+img {
+  max-width: 100%;
+}
+
+img.shop {
+  float:left;
+}
+
+td.shop {
+  vertical-align: top;
+  font-size: 0.8em;
+}
+
+td.shop-item {
+  vertical-align: top;
+  min-width: 99px;
+}
+
+article.shop {
+  font-size:0.8em;
+}
+
+section.items td {
+  padding-bottom: 20px;
+}
+
+#lang-switch{
+  padding-top: 10px;
+  float:right;
+  margin-right: 60px;
+}
+
+.spacer {
+  padding-top:40px;
+}
+
+
+
+/* Header */
+header {
+  background-image: url("sidebar-stitches.png"		);
+  background-repeat:repeat-y;
+  background-position:100% 39%;
+}
+
+.navigation, .logo {
+  margin-top: 80px;
+}
+
+.nav-link {
+  float:right;
+}
+
+.navigation {
+  padding-right: 50px;
+}
+
+
+/* Content */
+.stitches {
+  background-image: url("/assets/sidebar-stitches.png");
+  background-repeat:repeat-y;
+  background-position:100% 0%;
+}
+
+.content {
+  margin-top: -0px;
+}
+
+aside {
+  position: fixed;
+  width:60px;
+  top:25%;
+  left:68%;
+  padding-right: 20px;
+  z-index: 100;
+}
+
+#info-txt {
+  display:none;
+}
+
+.product-index-image {
+	float: left;
+}
+
+/* shop */
+.items {
+  padding-right: 0px;
+}
+
+/* about */
+.about-img {
+  float:right; 
+  padding:10px;
+} 
+
+.name-img {
+  padding:10px 0px;
+} 
+
+.trio-unit {
+  display: none !important;
+}
+
+/* blog */
+.blog-level-1, .blog-level-2 {
+      height: 500px;
+}
+
+.blog-left{
+  padding-right: 20px;
+  text-align: right;
+}
+
+.blog-right{
+
+}
+
+.dummy-blog{
+  height:100%
+}
+
+/* footer */
+
+.footer {
+  padding:20px;
+}
+
+
+/* button styling */
+.button, button, input[type="submit"], input[type="reset"], input[type="button"] {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: white;
+    border-color: white;
+    border-image: none;
+    border-style: solid;
+    border-width: 0px;
+    color: #333333;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Futura,"HelveticaNeue","Helvetica Neue",Helvetica,Verdana,Arial,sans-serif;
+    font-size: 12px;
+    line-height: normal;
+    text-decoration:underline;
+}
+
+.button:hover, button:hover, input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: white;
+    border-color: white;
+    border-image: none;
+    border-right: none;
+    border-style: none;
+    border-width: 0px;
+    color: black;
+    text-decoration:underline;
+}
+
+
+
+/* #Media Queries
+================================================== */
+
+	/* Smaller than standard 960 (devices and browsers) */
+	@media only screen and (max-width: 959px) {
+	
+		/* navigation */
+		.nav-link {
+			width:70px;
+		}
+
+		/* blog */
+		.blog-level-1, .blog-level-2 {
+			height: 600px;}
+
+		/* about */
+		.about-img {
+			float:right; padding:10px;
+		} 
+
+		.name-img {
+			padding:2px 0px;
+		} 
+	}
+
+	/* Tablet Portrait size to standard 960 (devices and browsers) */
+	@media only screen and (min-width: 768px) and (max-width: 959px) {
+		
+		/* navigation */
+		.nav-link {
+			width:70px;
+		}
+
+		/* blog */
+		.blog-level-1, .blog-level-2 {
+			height: 600px;}
+
+
+		/* about */
+		.about-img {
+			float:right; 
+			padding:10px;
+		} 
+
+		.name-img {
+			padding:2px 0px;
+		} 
+	}
+
+	/* All Mobile Sizes (devices and browser) */
+	@media only screen and (max-width: 767px) {
+
+		/* general */
+		.stitches {
+			background-image: none;
+		}
+
+		/* navigation */
+		.navigation {
+			padding:0;
+		}
+
+		.nav-link {
+			width:80px;
+		}
+
+		/* blog */
+		.blog-entry, .blog-img {
+			padding-bottom: 20px;
+		}
+
+		.blog-level-1, .blog-level-2 {
+			height: 100%;}
+
+		.blog-left {
+			text-align: left;
+		}
+		
+		.dummy-blog {
+			display:none;
+		}
+
+		/* about */
+		.about-img {
+			float:none;
+			padding:10px;
+		} 
+
+		.name-img {
+			padding:2px 0px;
+			display: none;
+		} 
+		.trio-singles {
+			display: none !important;
+		}
+
+		.trio-unit {
+			display: block !important;
+		}
+
+		/* header */	
+		header, .content{
+			background-image: none;
+		}
+
+		/* shop */
+		.items {
+			padding-top:20px;
+
+		}
+
+		/* aside */
+		aside {
+			background-color: white;
+			padding: 10px 0 0 10px;
+		}
+	}
+
+	/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+	@media only screen and (min-width: 480px) and (max-width: 767px) {
+
+		/* header */
+		header{
+			margin-top: 20px !important;
+		}
+
+		/* navigation */
+		.nav-link {
+			float:left;
+			width:90px;
+		}
+
+
+		/* about */
+		.about-img {
+			float:none;
+			padding:10px;
+		} 
+
+		.trio-singles {
+			display: none;
+		}
+
+		.trio-unit {
+			display: inline;
+		}
+
+		.name-img {
+			padding:2px 0px;
+			display: none;
+		} 
+
+		/* shop */
+		.items {
+			padding-top:20px;
+			width: 
+		}
+
+		img.example {
+			max-width:50%;
+		}
+		aside{
+			position: fixed;
+			width:40px;
+			top:33%;
+			left:55%;
+			z-index: 100;
+			padding-right: 160px;
+			font-size: 85%;
+		}
+	}
+
+	/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+	@media only screen and (max-width: 479px) {
+
+	/* don't display those */
+	.spacer, .dummy-blog {
+		display: none;
+	}
+
+	header{
+			margin-top: 20px !important;
+		}
+
+	header img {
+    max-width: 100%;
+	}
+
+	/* navigation */
+	.nav-link {
+		float:none;
+	}	
+
+	/* shop */
+	td.shop-item img {
+    max-width: 100%;
+	}
+
+	aside{
+		position: fixed;
+		width:40px;
+		top:33%;
+		left:55%;
+		z-index: 100;
+		padding-right: 160px;
+		font-size: 80%;
+		background-color: white;
+		}
+
+
+	#info-txt{
+		display:block;
+		}
+
+	.eng {
+		display:none;
+	}
+
+	img {
+		max-width:50%;
+	}
+
+	#info-img{
+		display:none;
+		}
+
+	#lang-switch {
+	  float:left;
+		}
+
+	}

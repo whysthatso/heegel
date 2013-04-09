@@ -1,0 +1,80 @@
+<%= form_for(@product) do |f| %>
+  <% if @product.errors.any? %>
+    <div id="error_explanation">
+      <h3><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+      <% @product.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="new-product-subset">
+  <div class="field">
+    <%= f.label "English" %>
+    <%= f.label :title_eng, "name of product" %>
+    <%= f.text_field :title_eng %>
+  </div>
+  <div class="field">
+    <%= f.label "eesti keeles" %>
+    <%= f.label :title_est, "toote nimi" %>
+    <%= f.text_field :title_est %>
+  </div>
+  <div class="field">
+    <%= f.label :creation_date_eng, "time of creation" %>
+    <%= f.label :creation_date_eng, "(i.e. January 2007)" %>
+    <%= f.text_field :creation_date_eng %>
+  </div>
+  <div class="field">
+    <%= f.label :creation_date_est, "valmistamise aeg" %>
+    <%= f.label :creation_date_est, "(nt jaanuar 2007)" %>
+    <%= f.text_field :creation_date_est %>
+  </div>
+  <div class="field">
+    <%= f.label :measurement_eng, "measurements" %>
+    <%= f.label :measurement_eng, "(i.e. 5.5 x 5 cm or Ø 80 cm)" %>
+    <%= f.text_field :measurement_eng %>
+  </div>
+  <div class="field">
+    <%= f.label :measurement_est, "mõõdud" %>
+    <%= f.label :measurement_est, "(nt 5,5 x 5 cm või Ø 80 cm)" %>
+    <%= f.text_field :measurement_est %>
+  </div>
+  <div class="field">
+    <%= f.label :description_eng, "description" %>
+    <%= f.text_area :description_eng, rows: "3" %>
+  </div>
+  <div class="field">
+    <%= f.label :description_est, "kirjeldus" %>
+    <%= f.text_area :description_est, rows: "3"  %>
+  </div>
+</div>
+
+  <div class="field">
+    <%= f.label :amount, "amount / kogus" %>
+    <%= f.label :amount, "(kui komplektis on mitu asja, kirjuta siia number)" %>
+    <%= f.text_field :amount, style: "width: 5em" %>
+
+
+  <div class="field">
+    <%= f.label :price, "price / hind" %>
+    <%= f.text_field :price, style: "width: 5em" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :image, "image / pilt" %>
+    <%= f.label :image, "(.png läbipaistval taustal)" %>
+    <%= f.file_field :image %>
+    <!-- todo image_cache, remove_image, image_hover_cache, remove_image_hover -->
+  </div>
+  <div class="field">
+    <%= f.label :image_hover, "hover image / pildi efekt " %>
+        <%= f.label :image_hover, "(.png läbipaistval taustal)" %>
+    <%= f.file_field :image_hover %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "add product / lisa toode" %>
+  </div>
+<% end %>

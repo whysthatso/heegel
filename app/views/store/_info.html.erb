@@ -1,0 +1,36 @@
+
+<!-- <tr>
+<td><%= #product.creation_eng %></td>
+<td><%= #product.creation_ee %></td>
+<td><%= #product.measurement_eng %></td>
+<td><%= #product.measurement_ee %></td>
+<td><%= #product.description_eng %></td>
+<td><%= #product.description_ee %></td>
+<td><%= #product.price %></td>
+<td><%= #product.amount_eng %></td>
+<td><%= #product.amount_ee %></td>
+<td><%= #product.price_by_amount %></td>
+</tr> -->
+
+<table>
+<tr>
+<th>Creation eng</th>
+<th>Creation ee</th>
+<th>Measurement eng</th>
+<th>Measurement ee</th>
+<th>Description eng</th>
+<th>Description ee</th>
+<th>Price</th>
+<th>Amount eng</th>
+<th>Amount ee</th>
+<th>Price by amount</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+
+
+</table>
+
+<%= link_to 'Edit', edit_product_path(product) %>
+<%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>

@@ -1,0 +1,114 @@
+<section class="eleven columns stitches content">
+  <%= flash[:alert] %>
+
+<p id="notice"><%= notice %></p>
+
+
+  <% unless admin? %>
+
+  <div class="row info">
+    <%= image_tag("info-est.png", id: "info-img") %>    
+
+    <div id="info-txt">
+      <span class="ee">
+        <strong>Iga ese on vestlus:</strong> 
+          See, millest me r&auml;&auml;kisime, on kirjas v&auml;ikesel kaardikesel<br />
+        <strong>Iga ese on s&uuml;ndmus:</strong> 
+          Asjad s&uuml;nnivad siis, kui me kokku saame ja juttu r&auml;&auml;gime<br />
+        <strong>Iga ese on kordumatu:</strong> 
+          Taaskasutame aegade jooksul kogutud materjale
+      </span>
+      <span class="eng">
+        <strong>Every item is a conversation:</strong> 
+          What we talked about is written on a small card<br />
+        <strong>Every item is an event:</strong> 
+          Things are created when we get together on a cosy saturday morning<br />
+        <strong>Every item is unique:</strong> 
+          We recycle our collection of second-hand materials
+      </span>
+    </div>
+    <span id="lang-switch">in English</span>
+  </div>
+  <% end %>
+
+  <div class="examples ten columns">
+    <% if admin? %>
+    <div class="row sort">
+      Sort items and add new:
+      <ul id="products" data-update-url="<%= sort_products_url %>">
+        <% @products.each do |product| %>
+          <%= content_tag_for :li, product do %>
+            <%= image_tag product.image.url(:thumb).to_s %>
+          <% end %>
+        <% end %>
+      </ul>
+      <br style="clear:left;" />
+      <%= link_to 'add product / lisa toode', new_product_path %><br />
+      <%= link_to 'logout', "/logout" %>
+    </div>
+    <% end %> 
+
+    <% @products.each do |product| %>
+    <div class="product-index-image">
+      <% if product.image_hover.blank? %>
+        <%= image_tag product.image.url(:column).to_s, 
+          width: "280", id: "product-#{product.id}" %>
+      <% else %>
+        <%= image_tag product.image.url(:column).to_s, 
+          mouseover: product.image_hover.url(:column).to_s,
+          width: "280", id: "product-#{product.id}" %>
+      <% end %>
+      <br />
+      <% if admin? %>
+      <span class="edit">
+        <%= link_to 'Edit', edit_product_path(product) %>
+        <%= link_to 'Delete', product, method: :delete, 
+            data: { confirm: 'Are you sure?' } %>
+      </span>
+      <% end %>
+    </div>
+    <% end %>
+    
+  </div>
+</section><!-- content -->
+
+<aside class="five columns">
+  <div class="section">
+
+    <% @products.each do |product| %>
+      <div class="infobox product-<%= product.id %>">
+        <strong><%= product.title_est %> </strong><br />
+        <%= product.measurement_est %><br />
+        <%= product.creation_date_est %><br />
+        <br />
+        <%= product.description_est %><br />
+        <br />
+        Hind <%= product.price.to_i %> eur&nbsp;&nbsp;&nbsp;
+          <% unless product.amount.blank? %>
+            (<%= product.amount %> tk)
+          <% end %>
+        <%= link_to "Telli", new_product_messages_path(product, order: product.title_est) %>
+        <br />
+        <br />
+        <br />
+        <strong><%= product.title_eng %> </strong><br />
+        <%= product.measurement_eng %><br />
+        <%= product.creation_date_eng %><br />
+        <br />
+        <%= product.description_eng %><br />
+        <br />
+        Price <%= product.price.to_i %> eur&nbsp;&nbsp;&nbsp;
+          <% unless product.amount.blank? %>
+            (<%= product.amount %> pcs)
+          <% end %>
+        <%= link_to "Order", new_product_messages_path(product, order: product.title_eng) %>
+      </div>
+    <% end %>
+
+  </div>
+</aside>
+
+
+
+
+

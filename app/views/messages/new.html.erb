@@ -1,0 +1,16 @@
+<section class="eleven columns stitches content">
+  <% if notice %>
+    <p id="notice"><%= notice %></p>
+  <% end %>
+
+	<h1>Order form / Tellimisvorm</h1>
+	<p>Tellimiseks saada meile siit e-kiri oma sooviga.<br>
+	(Kas lugesid infot tellimise kohta meie <%= link_to("shop", "poe lehelt") %>?) 
+	</p>
+	<p>In order to order, send us an e-mail via this form.<br>
+	(Did you read the info about ordering in our shop section <%= link_to("shop", "here") %>?) 
+	</p>
+
+	<%= render 'form' %>
+
+</section>

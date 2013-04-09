@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  creation_eng: MyString
+  creation_ee: MyString
+  measurement_eng: MyString
+  measurement_ee: MyString
+  description_eng: MyString
+  description_ee: MyString
+  price: 9.99
+  amount_eng: MyString
+  amount_ee: MyString
+  price_by_amount: false
+
+two:
+  creation_eng: MyString
+  creation_ee: MyString
+  measurement_eng: MyString
+  measurement_ee: MyString
+  description_eng: MyString
+  description_ee: MyString
+  price: 9.99
+  amount_eng: MyString
+  amount_ee: MyString
+  price_by_amount: false

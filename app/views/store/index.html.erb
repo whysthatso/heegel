@@ -1,0 +1,69 @@
+<section class="eleven columns stitches content">
+<p id="notice"><%= notice %></p>
+	<section class="ten columns add-bottom">
+		<h1>Tellimine</h1>
+		<p>
+			Enamik kodulehel olevaid asju on ainueksemplarid ja leidnud juba uue omaniku. Saame Sulle valmistada samasuguse, kuigi v&otilde;ib juhtuda, et teist v&auml;rvi l&otilde;ngast v&otilde;i teise mustriga kangastest. Tellida saab kirja teel t&auml;ites tellimisvormi. Sinna saad kirjutada ka oma eelistused v&otilde;i erisoovid, k&uuml;sida meil lisainfot v&otilde;i lisapilte, uurida materjalide v&otilde;i t&ouml;&ouml; valmimise aja kohta. Tellimusvormi saadab arvuti meie meiliaadressidele ja edasi saame suhelda juba otse. Tasuda saab panga&uuml;lekandega. Valmis eseme paneme posti (eseme hinnale lisandub postitasu vastavalt <a href="http://www.post.ee/failid/UPT_kiri_km_ga_2012.pdf" target="_blank" title="Eesti Posti hinnakirjale">Eesti Posti hinnakirjale</a>).
+		</p>
+		<p>
+		Juhul, kui saadame paki Eesti Posti t&auml;hitud maksikirjana, on riigisisesed hinnad j&auml;rgmised:
+		</p>
+		<p>
+		kuni 250 g&nbsp;&nbsp;&nbsp;2.20 eur<br />
+		kuni 500 g&nbsp;&nbsp;&nbsp;2.40 eur<br />
+		kuni 1 kg&nbsp;&nbsp;&nbsp;2.70 eur<br />
+		kuni 2 kg&nbsp;&nbsp;&nbsp;3.70 eur
+		</p>
+
+		<h1>Ordering</h1>
+		<p>
+		Most of the things on our web page are unique objects and are already at home with their new owners. We can make You a new one that looks the same, although it can happen that we use yarn of another colour or fabrics with different patterns.<br />
+		To order, send us an e-mail via the link next to the object. That is also where You can mention Your preferences or special requests, ask for additional information or pictures, inquire about materials or how much time it will take. The computer will send the order form to our e-mail addresses and we can continue correspondence directly. You can pay via a bank transfer. We will post the order with Eesti Post according to their <a href="http://www.post.ee/failid/UPT_kiri_km_ga_2012.pdf" target="_blank" title="Eesti Post price list">price list</a>. The postage fee will be added to the price of the order.
+		</p>
+		<p>
+		Postage fees are as follows:
+		</p>
+		<div style="float:left;padding-right:3em;">
+		<strong>inside EU</strong><br />
+		up to 250 g&nbsp;&nbsp;&nbsp;4.00 eur<br />
+		up to 500 g&nbsp;&nbsp;&nbsp;6.00 eur<br />
+		up to 1 kg&nbsp;&nbsp;&nbsp;10.00 eur<br />
+		up to 2 kg&nbsp;&nbsp;&nbsp;14.00 eur
+		</div>
+		<div>
+		<strong>outside EU</strong><br />
+		up to 250 g&nbsp;&nbsp;&nbsp;4.50 eur<br />
+		up to 500 g&nbsp;&nbsp;&nbsp;8.00 eur<br />
+		up to 1 kg&nbsp;&nbsp;&nbsp;12.00 eur<br />
+		up to 2 kg&nbsp;&nbsp;&nbsp;18.00 eur
+		</div>
+	</section>
+
+	<section class="ten columns add-bottom">
+		<h1>Product list</h1>
+		<% @products.each do |product| %>
+		<div class="store-index-item">
+			<div class="store-index-image">
+				<%= image_tag product.image.url(:thumb).to_s %>
+			</div>
+			<div class="store-index-text">
+				<strong><%= product.title_est %> </strong><br />
+		    <%= product.measurement_est %><br />
+		    Hind <%= product.price.to_i %> eur 
+		    <% unless product.amount.blank? %>
+		      (<%= product.amount %> tk)
+		    <% end %>
+		    <a class="order-ee" href="#">Telli</a><br />
+		    <br />
+		    <strong><%= product.title_eng %> </strong><br />
+		    <%= product.measurement_eng %><br />
+		    Price <%= product.price.to_i %> eur 
+		    <% unless product.amount.blank? %>
+		      (<%= product.amount %> pcs)
+		    <% end %>
+		    <%= link_to "Order", new_product_messages_path(product, order: product.title_eng) %>
+			</div>
+		</div>
+		<% end %>
+	</section>
+</section>

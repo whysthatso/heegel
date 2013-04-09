@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="">
+	<meta name="author" content="whyservices">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>Heegel</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<div class="container">
+
+		<header class="eleven columns add-bottom">
+			<div class="five columns alpha logo">
+				<%= link_to(image_tag("heegel-header-est_288x100.png", 
+					class: "remove-bottom", alt: "Käsitööklubi Hegel", title: "Käsitööklubi Hegel"), index_path) %>
+				<br />
+				<%= image_tag("header-line.png", class: "remove-bottom", alt: "Titel Underline", title: "Titel Underline") %>		
+				<br />			
+					<span class="eng">
+						* untranslateable pun mixing sublime philosophy with mundane	manual skills
+					</span>
+					<span class="ee">&nbsp;<br />&nbsp;</span>
+			</div>
+
+			<nav class="six columns omega navigation">
+				<%= link_to(image_tag("button-blog.png", mouseover: "button-blog_hover.png", width: "80", alt: "blog", title: "blog", class: "nav-link"), '') %>
+				<%= link_to(image_tag("button-about.png", mouseover: "button-about_hover.png", width: "80", alt: "blog", title: "about", class: "nav-link"), about_path) %>
+				<%= link_to(image_tag("button-shop.png", mouseover: "button-shop_hover.png", width: "80", alt: "shop", title: "shop", class: "nav-link"), store_path) %>
+			</nav> 
+
+		</header>
+	
+	<%= yield %>
+
+	</div><!-- container -->
+<%= debug(params) if Rails.env.development? %>
+	<footer class="footer">
+		&copy; heegel.ee<br />
+		
+		<%= link_to(image_tag("http://www.whyservices.eu/logo_whyservices_badge.png"), "http://www.whyservices.eu") %>
+
+	</footer>
+
+
+</body>
+</html>
