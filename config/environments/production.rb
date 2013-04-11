@@ -1,6 +1,15 @@
 Heegel::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
-
+  config.action_mailer.delivery_method = :smtp
+    
+  config.action_mailer.smtp_settings = {
+    address:        "smtp.googlemail.com",
+    port:           587,
+    authentication: "plain",
+    user_name:      "andreas@whyservices.eu",
+    password:       'cdorqavxqlirsrgm',
+    enable_starttls_auto: true
+  }
   # Code is not reloaded between requests
   config.cache_classes = true
 
@@ -25,13 +34,13 @@ Heegel::Application.configure do
 
   # Specifies the header that your server uses for sending files
   # config.action_dispatch.x_sendfile_header = "X-Sendfile" # for apache
-  # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for nginx
+  config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for nginx
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   # config.force_ssl = true
 
   # See everything in the log (default is :info)
-  # config.log_level = :debug
+  config.log_level = :debug
 
   # Prepend all log lines with the following tags
   # config.log_tags = [ :subdomain, :uuid ]
