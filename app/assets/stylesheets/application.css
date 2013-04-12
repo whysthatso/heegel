@@ -88,6 +88,7 @@ header {
 
 .nav-link {
   float:right;
+  width: 25%;
 }
 
 .navigation {
@@ -212,7 +213,8 @@ aside {
 	
 		/* navigation */
 		.nav-link {
-			width:70px;
+		  float:right;
+		  width: 30%;
 		}
 
 		/* blog */
@@ -227,6 +229,8 @@ aside {
 		.name-img {
 			padding:2px 0px;
 		} 
+
+
 	}
 
 	/* Tablet Portrait size to standard 960 (devices and browsers) */
@@ -234,7 +238,8 @@ aside {
 		
 		/* navigation */
 		.nav-link {
-			width:70px;
+		  float:right;
+		  width: 30%;
 		}
 
 		/* blog */
@@ -251,6 +256,12 @@ aside {
 		.name-img {
 			padding:2px 0px;
 		} 
+
+		/* fonts */
+		h1 {
+			font-size: 36px !important;
+			line-height: 46px !important;
+		}
 	}
 
 	/* All Mobile Sizes (devices and browser) */
@@ -266,8 +277,10 @@ aside {
 			padding:0;
 		}
 
+		/* navigation */
 		.nav-link {
-			width:80px;
+			float: none;
+			width: 20%;
 		}
 
 		/* blog */
@@ -320,6 +333,18 @@ aside {
 			background-color: white;
 			padding: 10px 0 0 10px;
 		}
+
+		/* fonts */
+		h1 {
+			font-size: 32px !important;
+			line-height: 40px !important;
+		}
+
+		.new-message-subset div.field {
+    float: left;
+    padding-right: 1em;
+    width: 100%;
+		}
 	}
 
 	/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
@@ -330,11 +355,6 @@ aside {
 			margin-top: 20px !important;
 		}
 
-		/* navigation */
-		.nav-link {
-			float:left;
-			width:90px;
-		}
 
 
 		/* about */
@@ -361,9 +381,6 @@ aside {
 			padding-top:20px;
 		}
 
-		img.example {
-			max-width:50%;
-		}
 		aside{
 			position: fixed;
 			width:40px;
@@ -372,6 +389,17 @@ aside {
 			z-index: 100;
 			padding-right: 160px;
 			font-size: 85%;
+		}
+
+		/* fonts */
+		h1 {
+			font-size: 24px !important;
+			line-height: 20px !important;
+		}
+		.new-message-subset div.field {
+    float: left;
+    padding-right: 1em;
+    width: 100%;
 		}
 	}
 
@@ -391,10 +419,10 @@ aside {
     max-width: 100%;
 	}
 
-	/* navigation */
-	.nav-link {
-		float:none;
-	}	
+		/* navigation */
+		.nav-link {
+		  width: 25%;
+		}	
 
 	/* shop */
 	td.shop-item img {
@@ -421,10 +449,6 @@ aside {
 		display:none;
 	}
 
-	img {
-		max-width:50%;
-	}
-
 	#info-img{
 		display:none;
 		}
@@ -433,4 +457,15 @@ aside {
 	  float:left;
 		}
 
+				/* fonts */
+		h1 {
+			font-size: 24px !important;
+			line-height: 20px !important;
+		}
+		.new-message-subset div.field {
+    float: left;
+    padding-right: 1em;
+    width: 100%;
+		}
 	}
+}

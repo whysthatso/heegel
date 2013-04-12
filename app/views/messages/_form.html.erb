@@ -13,27 +13,28 @@
 
 <div class="new-message-subset">
   <div class="field">
-    <%= f.label :order, "Tellimus / Order" %><br />
-    <%= f.text_field :order, value: params[:order] %>
+    <%= f.label :order, "Tellimus / Order" %>
+    <%= f.text_area :order, value: params[:order], rows:5, columns:10 %>
   </div>
   <div class="field">
-    <%= f.label :name, "Nimi / Name" %><br />
+    <%= f.label :name, "Nimi / Name" %>
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :email, "E-post / Email" %><br />
+    <%= f.label :email, "E-post / Email" %>
     <%= f.text_field :email %>
   </div>
   <div class="field">
-    <%= f.label :telefon, "Telefon / Phone" %><br />
+    <%= f.label :telefon, "Telefon / Phone" %>
     <%= f.text_field :telefon %>
+  </div>
+  <div class="field">
+    <%= f.label :address, "Aadress (tänav, linn, riik)" %>
+    <%= f.label :address, "Address (street, city, country)" %>
+    <%= f.text_area :address, rows:5, columns:10 %>
   </div>
   <div class="actions">
     <%= f.submit "Saada tellimus / Send order" %>
-  </div>
-  <div class="field">
-    <%= f.label :address, "Aadress (tänav, linn, riik) / Address (street, city, country)" %><br />
-    <%= f.text_area :address, rows:5, columns:10 %>
   </div>
 </div>
 

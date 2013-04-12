@@ -53,7 +53,7 @@
 		    <% unless product.amount.blank? %>
 		      (<%= product.amount %> tk)
 		    <% end %>
-		    <a class="order-ee" href="#">Telli</a><br />
+		    <%= link_to "Telli", new_product_messages_path(product, order: product.title_est) %><br />
 		    <br />
 		    <strong><%= product.title_eng %> </strong><br />
 		    <%= product.measurement_eng %><br />
