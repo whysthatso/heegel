@@ -5,11 +5,14 @@ server "37.221.194.97", :web, :app, :db, primary: true
 set :application, "heegel"
 set :user, "heegel"
 set :deploy_to, "/home/#{user}/apps/#{application}"
-set :deploy_via, :copy
-set :repository, "."
+
+set :git_enable_submodules, 0
+set :deploy_via, :remote_cache
 set :use_sudo, false
 
-set :scm, :none
+set :scm, :git
+set :repository,  "git@github.com:whysthatso/heegel.git"
+set :branch, "master"
 
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
@@ -25,14 +28,14 @@ namespace :deploy do
     end
   end
 
-  task :setup_config, roles: :app do
-    sudo "ln -nfs #{current_path}/config/heegel /etc/nginx/sites-enabled/#{application}"
-    sudo "ln -nfs #{current_path}/config/unicorn_init.sh /etc/init.d/unicorn_#{application}"
-    run "mkdir -p #{shared_path}/config"
-    #put File.read("config/database.example.yml"), "#{shared_path}/config/database.yml"
-    puts "Now edit the config files in #{shared_path}."
-  end
-  after "deploy:setup", "deploy:setup_config"
+  #task :setup_config, roles: :app do
+  #  sudo "ln -nfs #{current_path}/config/heegel /etc/nginx/sites-enabled/#{application}"
+  #  sudo "ln -nfs #{current_path}/config/unicorn_init.sh /etc/init.d/unicorn_#{application}"
+  #  run "mkdir -p #{shared_path}/config"
+  #  #put File.read("config/database.example.yml"), "#{shared_path}/config/database.yml"
+  #  puts "Now edit the config files in #{shared_path}."
+  #end
+  #after "deploy:setup", "deploy:setup_config"
 
   #task :symlink_config, roles: :app do
   #  run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
