@@ -5,7 +5,7 @@ class MessagesController < ApplicationController
 
   def create
     @message = Message.new(params[:message])
-    if @message.valid?
+    if verify_recaptcha() and @message.valid?
       Order.notify(@message).deliver
       redirect_to products_path, notice: "Ait&auml;h tellimuse eest, v&otilde;tame 
       Sinuga peatselt &uuml;hendust!<br /> Thank you for your order, we'll get 
