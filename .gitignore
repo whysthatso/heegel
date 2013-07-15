@@ -1,3 +1,7 @@
 db/*.sqlite3
 log/*.log
 tmp/**/*
+
+# Ignore application configuration
+/config/application.yml
+/config/deploy.rb

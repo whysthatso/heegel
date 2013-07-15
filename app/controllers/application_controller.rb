@@ -14,6 +14,6 @@ class ApplicationController < ActionController::Base
   end
 
   def admin?
-  	session[:password] == 'foobar'
+  	session[:password] == ENV["ADMIN_PASS"]
   end
 end

@@ -412,17 +412,17 @@ aside {
 	}
 
 	header{
-			margin-top: 20px !important;
-		}
+		margin-top: 20px !important;
+	}
 
 	header img {
     max-width: 100%;
 	}
 
-		/* navigation */
-		.nav-link {
-		  width: 25%;
-		}	
+	/* navigation */
+	.nav-link {
+	  width: 25%;
+	}
 
 	/* shop */
 	td.shop-item img {
@@ -468,4 +468,3 @@ aside {
     width: 100%;
 		}
 	}
-}

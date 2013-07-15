@@ -6,8 +6,8 @@ Heegel::Application.configure do
     address:        "smtp.googlemail.com",
     port:           587,
     authentication: "plain",
-    user_name:      "andreas@whyservices.eu",
-    password:       'cdorqavxqlirsrgm',
+    user_name:      ENV["MAIL_USER"],
+    password:       ENV["MAIL_PASS"],
     enable_starttls_auto: true
   }
   # Code is not reloaded between requests

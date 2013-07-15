@@ -1,6 +1,6 @@
 class Order < ActionMailer::Base
-  default from: "andreas@whyservices.eu",
-          cc: "andreas@whyservices.eu"
+  default from: ENV["EMAIL_SENDER"],
+          cc: ENV["EMAIL_SENDER"]
 
   def notify(message)
     @message = message

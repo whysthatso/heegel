@@ -21,6 +21,7 @@ gem 'carrierwave'
 gem 'rmagick'
 gem 'acts-as-list'
 gem 'active_attr'
+gem 'figaro'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

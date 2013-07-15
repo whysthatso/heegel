@@ -1,4 +1,7 @@
 Heegel::Application.routes.draw do
+  resources :blogs
+
+
   match '/about',   to: 'static_pages#about'
   match '/store',   to: 'store#index'
   match '/login',   to: 'sessions#new'
